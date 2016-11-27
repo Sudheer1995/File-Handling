@@ -1,0 +1,26 @@
+ contents of zip file problem_1.c , problem_2.c .
+ 
+ To Execute ./a.out <file name> .
+ 
+ <file name> file should be existing in the same directory of the program . 
+ 
+ output file is stored in a directory named "Assignment" as "output_<file name>" .
+ this program uses lseek(),write(),stat(),open(),close(),read(),mkdir(),chdir(),access() system calls .
+
+ problem_1.c :
+ 
+ creates a directory named "Assignment" . move to the end of the input file using lseek() , start
+ reading the input file using read() character by character by lseek() & stores them in temporary character
+ and writes the content of temporary character into new file "output_<file name>" in the Assignment directory 
+ using write() .it does this untill it encounters the beginning of the input file .
+
+ problem_2.c:
+ 
+ checks the existence of directory and output file using access() .
+ shows all the permissions given to the directory and file using stat() .
+ then checks for reversal of the input and output file as follows : 
+ opens the input file and output file in the "Assignment" directory "output_<file name>"
+ moves to the end of the output file using lseek() and starts reading both files using read() 
+ comparing each characters of input file and output file return yes on a complete succesfull reversal 
+ file otherwise no.
+ 
